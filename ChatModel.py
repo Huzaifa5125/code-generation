@@ -12,7 +12,7 @@ class ChatModel:
         self.model = AutoModelForCausalLM.from_pretrained(
             model,
             quantization_config=quantization_config,
-            device_map="cuda",
+            device_map="cpu",
             cache_dir="./models",
         )
         self.tokenizer = AutoTokenizer.from_pretrained(
